@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.waylau.spring5</groupId>
+    <artifactId>s5-samples</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>s5-samples</name>
+    <modules>
+        <module>samples/reactive-demos</module>
+        <module>samples/s5-ch01-hello-world</module>
+        <module>samples/s5-ch02-aop-aspect</module>
+        <module>samples/s5-ch02-aop-aspect-xml</module>
+        <module>samples/s5-ch02-custom-scope</module>
+        <module>samples/s5-ch02-custom-scope-annotation</module>
+        <module>samples/s5-ch02-dependency-injection</module>
+        <module>samples/s5-ch02-expression-language</module>
+        <module>samples/s5-ch05-client-side-rest-test</module>
+        <module>samples/s5-ch05-mvc-test</module>
+        <module>samples/s5-ch06-declarative-transaction</module>
+        <module>samples/s5-ch08-embedded-database</module>
+        <module>samples/s5-ch08-jdbc-object-mapping</module>
+        <module>samples/s5-ch08-jdbc-template</module>
+        <module>samples/s5-ch10-jaxb-oxm</module>
+        <module>samples/s5-ch11-mvc-rest</module>
+        <module>samples/s5-ch12-rest-template</module>
+        <module>samples/s5-ch13-websocket-stomp</module>
+        <module>samples/s5-ch15-webclient-file</module>
+        <module>samples/s5-ch16-reactive-websocket</module>
+        <module>samples/s5-ch19-jms-msg</module>
+        <module>samples/s5-ch22-java-mail</module>
+        <module>samples/s5-ch23-quartz-scheduler</module>
+        <module>samples/s5-ch24-java-cache</module>
+    </modules>
+</project>
