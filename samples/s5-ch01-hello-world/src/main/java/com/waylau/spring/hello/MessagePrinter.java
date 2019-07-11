@@ -10,9 +10,9 @@ import com.waylau.spring.hello.service.MessageService;
 
 /**
  * Message Printer.
- * 
- * @since 1.0.0 2018年1月25日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2018年1月25日
  */
 @Component
 public class MessagePrinter {

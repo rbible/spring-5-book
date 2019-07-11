@@ -10,25 +10,25 @@ import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * Fighter.
- * 
- * @since 1.0.0 2018年2月1日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2018年2月1日
  */
 @Aspect
 public class Fighter {
 
-	@Pointcut("execution(* com.waylau.spring.aop.Tiger.walk())")
-	public void foundTiger() {
-	}
+    @Pointcut("execution(* com.waylau.spring.aop.Tiger.walk())")
+    public void foundTiger() {
+    }
 
-	@Before(value = "foundTiger()")
-	public void foundBefore() {
-		System.out.println("Fighter wait for tiger...");
-	}
+    @Before(value = "foundTiger()")
+    public void foundBefore() {
+        System.out.println("Fighter wait for tiger...");
+    }
 
-	@AfterReturning("foundTiger()")
-	public void foundAfter() {
-		System.out.println("Fighter fight with tiger...");
-	}
+    @AfterReturning("foundTiger()")
+    public void foundAfter() {
+        System.out.println("Fighter fight with tiger...");
+    }
 
 }
