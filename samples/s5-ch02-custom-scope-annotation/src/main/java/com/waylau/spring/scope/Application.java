@@ -23,20 +23,28 @@ public class Application {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         @SuppressWarnings("resource")
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		/*
-		MessageService messageService = context.getBean(MessageService.class);
-		messageService.getMessage();
- 
-		MessageService messageService2 = context.getBean(MessageService.class);
-		messageService2.getMessage();
-		*/
 
+        mainThread(context);
+        multiThreads(context);
+
+        return;
+    }
+
+    private static void multiThreads(ApplicationContext context) throws InterruptedException, ExecutionException {
         CompletableFuture<String> task1 = getAndRunService(context);
-
         CompletableFuture<String> task2 = getAndRunService(context);
-
         task1.get();
         task2.get();
+    }
+
+    private static void mainThread(ApplicationContext context) {
+        MessageService messageService = context.getBean(MessageService.class);
+        messageService.getMessage();
+
+
+        MessageService messageService2 = context.getBean(MessageService.class);
+        messageService2.getMessage();
+
     }
 
     private static CompletableFuture<String> getAndRunService(ApplicationContext context) {

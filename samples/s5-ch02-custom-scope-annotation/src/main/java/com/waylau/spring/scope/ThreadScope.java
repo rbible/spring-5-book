@@ -33,9 +33,9 @@ public class ThreadScope implements Scope {
             obj = objectFactory.getObject();
             scope.put(name, obj);
 
-            System.out.println("Not exists " + name + "; hashCode: " + obj.hashCode());
+            System.out.println("thread:" + Thread.currentThread().getName() + ", Not exists " + name + "; hashCode: " + obj.hashCode());
         } else {
-            System.out.println("Exists " + name + "; hashCode: " + obj.hashCode());
+            System.out.println("thread:" + Thread.currentThread().getName() + ", Exists " + name + "; hashCode: " + obj.hashCode());
         }
 
         return obj;

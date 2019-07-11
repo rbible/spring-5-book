@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 
 /**
  * Message Service Impl.
- * 
- * @since 1.0.0 2019年2月13日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2019年2月13日
  */
 @Scope("threadScope")
 @Service
 public class MessageServiceImpl implements MessageService {
-	
-	public String getMessage() {
-		return "Hello World!";
-	}
 
+    public String getMessage() {
+        System.out.println("thread:" + Thread.currentThread().getName() + ", Hello World!");
+        return "Hello World!";
+    }
 }
