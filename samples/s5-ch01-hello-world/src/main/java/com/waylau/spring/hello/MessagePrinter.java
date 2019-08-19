@@ -19,6 +19,11 @@ public class MessagePrinter {
 
     final private MessageService service;
 
+    /**
+     * studynote:
+     * 构造器方式注入;
+     * Autowired 标注在方法上
+     */
     @Autowired
     public MessagePrinter(MessageService service) {
         this.service = service;
