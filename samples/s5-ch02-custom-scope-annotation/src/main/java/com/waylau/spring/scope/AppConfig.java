@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Configuration;
  * @since 1.0.0 2019年2月13日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+
+/**
+ * mynote:  标识配置类
+ */
 @Configuration
 @ComponentScan
 public class AppConfig {
