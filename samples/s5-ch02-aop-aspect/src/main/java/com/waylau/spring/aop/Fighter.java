@@ -17,8 +17,12 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Fighter {
 
+    /**
+     * mynote: pointcut 为空方法,内部的逻辑不执行
+     */
     @Pointcut("execution(* com.waylau.spring.aop.Tiger.walk())")
     public void foundTiger() {
+        System.out.println("foundTiger...");
     }
 
     @Before(value = "foundTiger()")
