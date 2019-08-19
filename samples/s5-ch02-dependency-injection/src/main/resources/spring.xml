@@ -14,6 +14,7 @@
 		<constructor-arg name="age" value="30" />
 	</bean>
 
+	<!--mynote 通过构造函数注入实例-->
 	<bean id="messagePrinter" class="com.waylau.spring.di.MessagePrinter">
 		<constructor-arg name="service" ref="messageServiceImpl" />
 	</bean>
