@@ -3,7 +3,10 @@
  */
 package com.waylau.spring.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -27,12 +30,23 @@ public class Fighter {
 
     @Before(value = "foundTiger()")
     public void foundBefore() {
-        System.out.println("Fighter wait for tiger...");
+        System.out.println("Before：Fighter wait for tiger...");
+    }
+
+    @After(value = "foundTiger()")
+    public void foundAfter() {
+        System.out.println("After：Fighter after for tiger...");
     }
 
     @AfterReturning("foundTiger()")
-    public void foundAfter() {
-        System.out.println("Fighter fight with tiger...");
+    public void foundAfterReturn() {
+        System.out.println("AfterReturn：Fighter fight with tiger...");
     }
 
+    @Around("foundTiger()")
+    public void around(ProceedingJoinPoint point) throws Throwable {
+        System.out.println("AroundBefore：Fighter around before with tiger...");
+        point.proceed();
+        System.out.println("AroundAfter：Fighter around after with tiger...");
+    }
 }
