@@ -15,11 +15,14 @@
     <aop:aspectj-autoproxy/>
 
     <!-- 定义Aspect -->
+    <!--pointcut、before、after、afterreturn-->
     <aop:config>
         <aop:pointcut expression="execution(* com.waylau.spring.aop.Tiger.walk())" id="foundTiger"/>
         <aop:aspect id="myAspect" ref="fighter">
             <aop:before method="foundBefore" pointcut-ref="foundTiger"/>
-            <aop:after-returning method="foundAfter" pointcut-ref="foundTiger"/>
+            <aop:after-returning method="foundAfterReturn" pointcut-ref="foundTiger"/>
+            <aop:after method="foundAfter" pointcut-ref="foundTiger"/>
+            <aop:around method="foundAround" pointcut-ref="foundTiger"/>
         </aop:aspect>
     </aop:config>
 
