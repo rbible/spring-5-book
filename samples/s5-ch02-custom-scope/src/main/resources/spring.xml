@@ -22,7 +22,7 @@
         <constructor-arg name="service" ref="messageServiceImpl"/>
     </bean>
 
-    <!--自定义 scope,支持 bean 实例化控制-->
+    <!--自定义 scope,支持 bean 实例化控制 xml-->
     <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
         <property name="scopes">
             <map>
