@@ -18,6 +18,10 @@ import com.waylau.spring.jdbc.vo.User;
  * @since 1.0.0 2018年3月5日
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
+
+/**
+ * mynote: 参数映射
+ */
 public class UserSqlUpdate extends SqlUpdate {
 	
 	public UserSqlUpdate(DataSource ds) {

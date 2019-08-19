@@ -18,6 +18,10 @@ import com.waylau.spring.jdbc.vo.User;
  * @since 1.0.0 2018年3月5日
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
+
+/**
+ * mynote: 结果集映射
+ */
 public class UserMappingQuery extends MappingSqlQuery<User> {
 
 	public UserMappingQuery(DataSource dataSource) {

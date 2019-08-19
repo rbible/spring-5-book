@@ -25,18 +25,24 @@ public class UserDaoImpl implements UserDao {
     private JdbcTemplate jdbcTemplate;
 	private UserMappingQuery userMappingQuery;
 	private UserSqlUpdate userSqlUpdate;
-	
+
     @Autowired
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
         this.userMappingQuery = new UserMappingQuery(dataSource);
         this.userSqlUpdate = new UserSqlUpdate(dataSource);
     }
-	    
+
+	/**
+	 * mynote：参数转换执行
+	 */
 	public void saveUser(User user) {
 		this.userSqlUpdate.execute(user);
 	}
 
+	/**
+	 * mynote：结果转换执行
+	 */
 	public List<User> listUser() {
 		return this.userMappingQuery.execute();
 	}
