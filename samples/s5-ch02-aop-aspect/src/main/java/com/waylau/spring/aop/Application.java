@@ -15,6 +15,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
 
     public static void main(String[] args) {
+        /**
+         * mynote：使用 xml 加载 applicationcontext
+         */
         @SuppressWarnings("resource")
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Tiger tiger = context.getBean(Tiger.class);
