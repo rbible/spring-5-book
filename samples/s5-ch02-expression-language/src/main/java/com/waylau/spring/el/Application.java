@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Application Main.
- * 
+ *
  * @since 1.0.0 2018年2月4日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
@@ -18,41 +18,25 @@ public class Application {
 		@SuppressWarnings("resource")
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
 
-		ShopList list = (ShopList) ctx.getBean("list");
-		System.out.println(list);
+		getBeanAndPrint(ctx, "list");
+		getBeanAndPrint(ctx, "list2");
+		getBeanAndPrint(ctx, "list3");
+		getBeanAndPrint(ctx, "list4");
+		getBeanAndPrint(ctx, "list5");
+		getBeanAndPrint(ctx, "list6");
+		getBeanAndPrint(ctx, "list7");
+		getBeanAndPrint(ctx, "list8");
+		getBeanAndPrint(ctx, "list9");
+		getBeanAndPrint(ctx, "list10");
+		getBeanAndPrint(ctx, "list11");
+		getBeanAndPrint(ctx, "list12");
 
-		list = (ShopList) ctx.getBean("list2");
-		System.out.println(list);
+	}
 
-		list = (ShopList) ctx.getBean("list3");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list4");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list5");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list6");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list7");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list8");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list9");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list10");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list11");
-		System.out.println(list);
-
-		list = (ShopList) ctx.getBean("list12");
-		System.out.println(list);
+	private static void getBeanAndPrint(ApplicationContext ctx, String listId) {
+		ShopList list;
+		list = (ShopList) ctx.getBean(listId);
+		System.out.println(listId +": "+ list);
 	}
 
 }
