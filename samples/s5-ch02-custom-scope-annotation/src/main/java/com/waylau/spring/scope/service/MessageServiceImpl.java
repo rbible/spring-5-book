@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
  * @author <a href="https://waylau.com">Way Lau</a>
  * @since 1.0.0 2019年2月13日
  */
+
+/**
+ * mynote: bean scope 设置
+ */
 @Scope("threadScope")
 @Service
 public class MessageServiceImpl implements MessageService {
