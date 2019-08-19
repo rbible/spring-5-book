@@ -33,8 +33,7 @@ public class UserDaoImpl implements UserDao {
     }
 	    
 	public void saveUser(User user) {
-		this.jdbcTemplate.update(
-		        "INSERT INTO USER (username, age) VALUES (?, ?)",
+		this.jdbcTemplate.update("INSERT INTO USER (username, age) VALUES (?, ?)",
 		        user.getUsername(), user.getAge());
 	}
 
