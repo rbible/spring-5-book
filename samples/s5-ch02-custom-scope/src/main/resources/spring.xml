@@ -18,6 +18,11 @@
         <constructor-arg name="service" ref="messageServiceImpl"/>
     </bean>
 
+    <bean id="messagePrinter2" class="com.waylau.spring.scope.MessagePrinter">
+        <constructor-arg name="service" ref="messageServiceImpl"/>
+    </bean>
+
+    <!--自定义 scope,支持 bean 实例化控制-->
     <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
         <property name="scopes">
             <map>
