@@ -22,7 +22,8 @@ public class CacheConfiguration {
     @Bean
 	public CacheManager cacheManager() {
         SimpleCacheManager cacheManager = new SimpleCacheManager();
-        cacheManager.setCaches(Arrays.asList(new ConcurrentMapCache("weahterDataByCityId"),
+        cacheManager.setCaches(Arrays.asList(
+        		new ConcurrentMapCache("weahterDataByCityId"),
         		new ConcurrentMapCache("weahterDataByCityName")));
         return cacheManager;
 	}
