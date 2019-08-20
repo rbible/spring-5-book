@@ -10,27 +10,21 @@ import org.springframework.web.reactive.socket.client.JettyWebSocketClient;
 import org.springframework.web.reactive.socket.client.WebSocketClient;
 
 /**
- * 
+ * @author <a href="https://waylau.com">Way Lau</a>
  * @since 1.0.0 2018年4月9日
- * @author <a href="https://waylau.com">Way Lau</a> 
  */
 public class Client {
 
 	/**
 	 * @param args
-	 * @throws URISyntaxException 
+	 * @throws URISyntaxException
 	 */
 	public static void main(String[] args) throws URISyntaxException {
 		WebSocketClient client = new JettyWebSocketClient();
 
 		URI url = new URI("ws://localhost:8080/chat");
-		
 
-		
-		client.execute(url, session ->
-		        session.receive()
-		                .doOnNext(System.out::println)
-		                .then());
+		client.execute(url, session -> session.receive().doOnNext(System.out::println).then());
 
 	}
 

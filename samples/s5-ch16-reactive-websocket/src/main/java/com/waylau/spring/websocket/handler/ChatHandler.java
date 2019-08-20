@@ -11,18 +11,17 @@ import reactor.core.publisher.Mono;
 
 /**
  * Chat Handler.
- * 
- * @since 1.0.0 2018年4月9日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2018年4月9日
  */
 @Component
 public class ChatHandler implements WebSocketHandler {
 
 	@Override
 	public Mono<Void> handle(WebSocketSession session) {
-		return session.send(
-				session.receive().map(msg 
-						-> session.textMessage(session.getId() + ":" + msg.getPayloadAsText())));
+		return session.send(session.receive().map(
+				msg -> session.textMessage(session.getId() + ":" + msg.getPayloadAsText())));
 	}
 
 }
