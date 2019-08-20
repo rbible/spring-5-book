@@ -73,6 +73,11 @@
 			<version>3.1.0</version>
 			<!--<scope>provided</scope>-->
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty.websocket</groupId>
+			<artifactId>websocket-client</artifactId>
+			<version>9.4.11.v20180605</version>
+		</dependency>
 	</dependencies>
     <build>
         <pluginManagement>
