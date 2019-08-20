@@ -16,6 +16,10 @@ import com.waylau.spring.mvc.vo.WeatherResponse;
  * @since 1.0.0 2018年3月22日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+
+/**
+ * mynote: restTemplate
+ */
 @Service
 public class WeatherDataServiceImpl implements WeatherDataService {
 
@@ -36,6 +40,9 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 		return this.doGetWeatherData(uri);
 	}
 
+	/**
+	 * mynote: restTemplate
+	 */
 	private WeatherResponse doGetWeatherData(String uri) {
 
 	    ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
