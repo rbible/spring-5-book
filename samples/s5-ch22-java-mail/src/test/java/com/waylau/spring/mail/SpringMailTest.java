@@ -90,8 +90,9 @@ public class SpringMailTest {
 		helper.setFrom(FROM);// 发件人
 		helper.setTo(TO);// 收件人
 		helper.setSubject(SUBJECT);// 主题
-		
-		helper.setText("<html><body><h4>Hello World!</h4>" + "Welcome to <a href='https://waylau.com'>waylau.com!</a></body></html>", true);
+
+		helper.setText("<html><body><h4>Hello World!</h4>" +
+				"Welcome to <a href='https://waylau.com'>waylau.com!</a></body></html>", true);
 
 		// 添加附件
 		FileSystemResource image = new FileSystemResource(new File(FILE_PATH));
