@@ -19,19 +19,24 @@ import com.waylau.spring.mail.config.AppConfig;
 
 /**
  * Spring JMS Test.
- * 
- * @since 1.0.0 2018年4月15日
+ *
  * @author <a href="https://waylau.com">Way Lau</a>
+ * @since 1.0.0 2018年4月15日
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { AppConfig.class })
+@ContextConfiguration(classes = {AppConfig.class})
 public class SpringMailTest {
 
-	private static final String FROM = "waylau521@163.com";
-	private static final String TO = "778907484@qq.com";
+	private static final String FROM = "rbible@163.com";
+	private static final String TO = "309230941@qq.com";
 	private static final String SUBJECT = "Spring Email Test";
 	private static final String TEXT = "Hello World! Welcome to waylau.com!";
-	private static final String FILE_PATH = "D:\\waylau_181_181.jpg";
+	/**
+	 * mynote: file path update
+	 */
+	private static final String FILE_PATH = "/Users//beck/Downloads/1.png";
+//	private static final String FILE_PATH = "D:\\waylau_181_181.jpg";
+
 	@Autowired
 	private JavaMailSender mailSender;
 
@@ -51,7 +56,7 @@ public class SpringMailTest {
 
 	/**
 	 * 发送带有附件的email
-	 * 
+	 *
 	 * @throws MessagingException
 	 */
 	@Test
@@ -75,7 +80,7 @@ public class SpringMailTest {
 
 	/**
 	 * 发送富文本内容的Email
-	 * 
+	 *
 	 * @throws MessagingException
 	 */
 	@Test
@@ -85,9 +90,9 @@ public class SpringMailTest {
 		helper.setFrom(FROM);// 发件人
 		helper.setTo(TO);// 收件人
 		helper.setSubject(SUBJECT);// 主题
-		helper.setText("<html><body><h4>Hello World!</h4>"
-				+ "Welcome to <a href='https://waylau.com'>waylau.com!</a></body></html>", true);
 		
+		helper.setText("<html><body><h4>Hello World!</h4>" + "Welcome to <a href='https://waylau.com'>waylau.com!</a></body></html>", true);
+
 		// 添加附件
 		FileSystemResource image = new FileSystemResource(new File(FILE_PATH));
 		System.out.println(image.exists());
