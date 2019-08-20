@@ -19,10 +19,8 @@ public class RestConfiguration {
 
     @Bean  
     public RestTemplate restTemplate() { 
-    	RestTemplate restTemplate = new RestTemplate(
-    			new HttpComponentsClientHttpRequestFactory()); // 使用HttpClient，支持GZIP
-    	restTemplate.getMessageConverters().set(1, 
-    			new StringHttpMessageConverter(StandardCharsets.UTF_8)); // 支持中文编码
+    	RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory()); // 使用HttpClient，支持GZIP
+    	restTemplate.getMessageConverters().set(1, new StringHttpMessageConverter(StandardCharsets.UTF_8)); // 支持中文编码
         return restTemplate;
     }
 
