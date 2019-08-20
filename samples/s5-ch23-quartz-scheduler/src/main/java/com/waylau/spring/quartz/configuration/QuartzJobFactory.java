@@ -14,8 +14,8 @@ import org.springframework.scheduling.quartz.SpringBeanJobFactory;
  * 
  * @since 1.0.0 2018年4月19日
  * @author <a href="https://waylau.com">Way Lau</a> 
- * @see QuartzJobBean
- * @see WeatherDataSyncJob
+// * @see QuartzJobBean
+// * @see WeatherDataSyncJob
  */
 public class QuartzJobFactory extends SpringBeanJobFactory {
 	
