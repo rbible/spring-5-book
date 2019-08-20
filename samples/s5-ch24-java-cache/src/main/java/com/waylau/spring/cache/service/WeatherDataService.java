@@ -19,7 +19,7 @@ public interface WeatherDataService {
 	
 	/**
 	 * 根据城市名称查询天气数据
-	 * @param cityId
+	 * @param cityName
 	 * @return
 	 */
 	WeatherResponse getDataByCityName(String cityName);

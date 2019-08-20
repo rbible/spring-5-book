@@ -40,26 +40,20 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 	}
 
 	private WeatherResponse doGetWeatherData(String uri) {
-
 		System.out.println("调用天气接口执行");  // 测试程序是否走的缓存
-		
-	    ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
-	    
-	    String strBody = null;
 
+	    ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
+	    String strBody = null;
 	    if (response.getStatusCodeValue() == 200) {
 	        strBody = response.getBody();
 	    }
-
 	    ObjectMapper mapper = new ObjectMapper();
 	    WeatherResponse weather = null;
-
 	    try {
 	        weather = mapper.readValue(strBody, WeatherResponse.class);
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-
 	    return weather;
 	}
 	
