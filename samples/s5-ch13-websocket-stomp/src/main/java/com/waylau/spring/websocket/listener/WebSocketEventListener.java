@@ -19,6 +19,10 @@ import com.waylau.spring.websocket.handler.vo.ChatMessage;
  * @since 1.0.0 2018年4月4日
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
+
+/**
+ * mynote:websocket
+ */
 @Component
 public class WebSocketEventListener {
 

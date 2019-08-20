@@ -29,6 +29,9 @@ function connect(event) {
 	event.preventDefault();
 }
 
+/**
+ * mynote：stompClient
+ */
 function onConnected() {
 	// 订阅 Public Topic
 	stompClient.subscribe('/topic/public', onMessageReceived);
@@ -57,8 +60,7 @@ function sendMessage(event) {
 			type : 'CHAT'
 		};
 
-		stompClient.send("/app/chat.sendMessage", {}, JSON
-				.stringify(chatMessage));
+		stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
 		messageInput.value = '';
 	}
 	event.preventDefault();
@@ -111,5 +113,8 @@ function getAvatarColor(messageSender) {
 	return colors[index];
 }
 
+/**
+ * 绑定 js 方法
+ */
 usernameForm.addEventListener('submit', connect, true)
 messageForm.addEventListener('submit', sendMessage, true)
