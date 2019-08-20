@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Import;
  * @since 1.0.0 2018年3月21日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+
+/**
+ * mynote：basePackages使用
+ */
 @Configuration
 @ComponentScan(basePackages = { "com.waylau.spring" })  
 @Import({ MvcConfiguration.class })
