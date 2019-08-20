@@ -3,6 +3,7 @@ package com.waylau.spring.cache.service;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,12 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 	public WeatherResponse getDataByCityName(String cityName) {
 		String uri = WEATHER_API + "?city=" + cityName;
 		return this.doGetWeatherData(uri);
+	}
+
+	@Override
+	@CacheEvict(cacheNames = "weahterDataByCityId")
+	public Boolean cleanCache(String cityId) {
+		return true;
 	}
 
 	private WeatherResponse doGetWeatherData(String uri) {

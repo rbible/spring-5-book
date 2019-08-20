@@ -23,4 +23,6 @@ public interface WeatherDataService {
 	 * @return
 	 */
 	WeatherResponse getDataByCityName(String cityName);
+
+	Boolean cleanCache(String cityId);
 }

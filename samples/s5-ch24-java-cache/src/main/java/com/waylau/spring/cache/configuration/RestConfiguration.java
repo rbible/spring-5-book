@@ -10,20 +10,18 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * REST配置.
- * 
+ *
+ * @author <a href="https://waylau.com">Way Lau</a>
  * @since 1.0.0 2018年3月22日
- * @author <a href="https://waylau.com">Way Lau</a> 
  */
 @Configuration
 public class RestConfiguration {
 
-    @Bean  
-    public RestTemplate restTemplate() { 
-    	RestTemplate restTemplate = new RestTemplate(
-    			new HttpComponentsClientHttpRequestFactory()); // 使用HttpClient，支持GZIP
-    	restTemplate.getMessageConverters().set(1, 
-    			new StringHttpMessageConverter(StandardCharsets.UTF_8)); // 支持中文编码
-        return restTemplate;
-    }
+	@Bean
+	public RestTemplate restTemplate() {
+		RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory()); // 使用HttpClient，支持GZIP
+		restTemplate.getMessageConverters().set(1, new StringHttpMessageConverter(StandardCharsets.UTF_8)); // 支持中文编码
+		return restTemplate;
+	}
 
 }
